@@ -31,7 +31,6 @@ Things you may want to cover:
 |Name|string|null: false, unique: true|
 |email|string|null: faise, unique: true|
 |password|string|null: false, unique: true|
-|user_id|integer|null: false, unique: true|
 
 ### Association
 - has_many :team, through: :users_group
