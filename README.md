@@ -33,37 +33,37 @@ Things you may want to cover:
 |password|string|null: false, unique: true|
 
 ### Association
-- has_many :teams, through: :users_group
+- has_many :teams, through: :users_groups
 - has_many :messages
-- has_many :users_group
+- has_many :users_groups
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|null: false|
-|team_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|body|text||
+|image|string||
+|team|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :users 
-- has_many :teams
+- belongs_to :user 
+- belongs_to :team
 
 ## users_teamテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|team_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|team|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :teams
-- belongs_to :users
+- belongs_to :team
+- belongs_to :user
 
 ## teamテーブル
 |Column|Type|Options|
 |------|----|-------|
-|team_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
-- has_many: users
-- has_many: messages
+- has_many: users through: :users_groups
+- has_many: users_groups 
