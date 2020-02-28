@@ -33,7 +33,7 @@ Things you may want to cover:
 |password|string|null: false, unique: true|
 
 ### Association
-- has_many :team, through: :users_group
+- has_many :teams, through: :users_group
 - has_many :messages
 - has_many :users_group
 
@@ -47,7 +47,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :users 
-- has_many :team
+- has_many :teams
 
 ## users_teamテーブル
 |Column|Type|Options|
@@ -56,7 +56,7 @@ Things you may want to cover:
 |team_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :team
+- belongs_to :teams
 - belongs_to :users
 
 ## teamテーブル
