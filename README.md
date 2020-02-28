@@ -31,6 +31,7 @@ Things you may want to cover:
 |Name|string|null: false, unique: true|
 |email|string|null: faise, unique: true|
 |password|string|null: false, unique: true|
+|user_id|integer|null: false, unique: true|
 
 ### Association
 - has_many :team, through: :users_group
@@ -46,7 +47,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
+- has_many :users 
 - has_many :team
 
 ## users_groupテーブル
@@ -62,7 +63,8 @@ Things you may want to cover:
 ## teamテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key :true|
+|team_name|string|null: false, unique: true|
+|group_id|integer|null: false, unique: true|
 |user_id|integer|null: false, foreign_key :true|
 
 ### Association
